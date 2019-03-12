@@ -4,8 +4,6 @@ class Bottles
 	end
 
 	def first_section(bottles)
-		single_bottle = bottles == 1
-
 		ending = first_suffix(bottles)
 
 		number_of_bottles = bottles
