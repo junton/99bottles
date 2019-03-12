@@ -1,8 +1,44 @@
 class Bottles
 	def verse(bottles)
-		"#{bottles} bottles of beer on the wall, #{bottles} bottles of beer.
-Take one down and pass it around, #{bottles - 1} bottles of beer on the wall.
-"
+		"#{first_section(bottles)}\n#{second_section(bottles)}\n"
+	end
+
+	def first_section(bottles)
+		single_bottle = bottles == 1
+
+		ending = first_suffix(bottles)
+
+		number_of_bottles = bottles
+		if(bottles == 0)
+			number_of_bottles = "No more"
+		end
+
+		"#{number_of_bottles} bottle#{ending} of beer on the wall, #{number_of_bottles} bottle#{ending} of beer."
+	end
+
+	def second_section(bottles)
+		ending = second_suffix(bottles)
+		if bottles == 1
+			"Take it down and pass it around, no more bottles of beer on the wall."
+		else
+			"Take one down and pass it around, #{bottles-1} bottle#{ending} of beer on the wall."
+		end
+	end
+
+	def first_suffix(bottles)
+		if(bottles == 1)
+			ending = ""
+		else
+			ending = "s"
+		end
+	end
+
+	def second_suffix(bottles)
+		if(bottles - 1 == 1)
+			ending = ""
+		else
+			ending = "s"
+		end
 	end
 end
 
